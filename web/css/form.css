@@ -1,6 +1,6 @@
 .login-card {
     min-height: 100vh;
-    background-image: url('https://selimdoyranli.com/cdn/material-form/img/bg.jpg');
+    background:'./imagens/foto.jpg';
     background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;

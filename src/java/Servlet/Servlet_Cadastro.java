@@ -34,7 +34,7 @@ public class Servlet_Cadastro extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-
+            System.out.println("aqui");
             String nome = (String) request.getParameter("nome");
             String sobrenome = (String) request.getParameter("sobrenome");
             String email = (String) request.getParameter("email");

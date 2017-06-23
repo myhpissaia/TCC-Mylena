@@ -15,13 +15,16 @@
                 <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="glyphicon glyphicon-home fa fa-times">
                     </i></a>
                 <li class="sidebar-brand">
-                    <a href="index.jsp">Donate Solidarity</a>
+                    <a href="index.jsp">Doe Solidariedade</a>
                 </li>
                 <li>
                     <a href="login.jsp">Login</a>
                 </li>
                 <li>
                     <a href="cadastro.jsp">Cadastro</a>
+                </li>
+                <li>
+                    <a href="sobre.jsp">Sobre</a>
                 </li>
             </ul>
         </nav>
@@ -39,19 +42,19 @@
                                     <input requered name="nome" type="text" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label><span class="span-input">Nome</span></label>
+                                   <label><i class="material-icons glyphicon glyphicon-user input-ikon"></i><span class="span-input">Nome</span></label>
                                 </div>
                                 <div class="group">
                                     <input requered name="sobrenome" type="text" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label><span class="span-input">Sobrenome</span></label>
+                                   <label><i class="material-icons glyphicon glyphicon-user input-ikon"></i><span class="span-input">Sobrenome</span></label>
                                 </div>
                                 <div class="group">
                                     <input requered name="email" type="text" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label><span class="span-input">E-mail</span></label>
+                                    <label><i class="material-icons glyphicon glyphicon-envelope"></i><span class="span-input">E-mail</span></label>
                                 </div>
 
                             </div>
@@ -60,23 +63,23 @@
                                     <input requered name="login" type="text" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label><span class="span-input">Login</span></label>
+                                   <label><i class="material-icons glyphicon glyphicon-user input-ikon"></i><span class="span-input">Login</span></label>
                                 </div>
                                 <div class="group">
                                     <input requered name="senha" type="password" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label><span class="span-input">Senha</span></label>
+                                   <label><i class="material-icons glyphicon glyphicon-lock"></i><span class="span-input">Senha</span></label>
                                 </div>
                                 <div class="group">
                                     <input requered name="consenha" type="password" required>
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
-                                    <label><span class="span-input">Confirmar senha</span></label>
+                                    <label><i class="material-icons glyphicon glyphicon-lock"></i><span class="span-input">Confirmar Senha</span></label>
                                 </div>
                                 <div class="wrapper">
                                     <span class="group-btn">     
-                                        <a href="#" class="btn btn-primary btn-md">Cadastrar<i class="fa fa-sign-in"></i></a>
+                                        <a type="submit" href="#"class="btn btn-primary btn-md">Cadastrar<i  class="fa fa-sign-in"></i></a>
                                     </span>
                                 </div>
                             </div>

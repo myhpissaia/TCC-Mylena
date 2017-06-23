@@ -14,13 +14,16 @@
                 <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="glyphicon glyphicon-home fa fa-times">
                     </i></a>
                 <li class="sidebar-brand">
-                    <a href="index.jsp">Donate Solidarity</a>
+                    <a href="index.jsp">Doe Solidariedade</a>
                 </li>
                 <li>
                     <a href="login.jsp">Login</a>
                 </li>
                 <li>
                     <a href="cadastro.jsp">Cadastro</a>
+                </li>
+                 <li>
+                    <a href="sobre.jsp">Sobre</a>
                 </li>
             </ul>
         </nav>
@@ -43,7 +46,7 @@
                                 <input type="text" required>
                                 <span class="highlight"></span>
                                 <span class="bar"></span>
-                                <label><i class="material-icons glyphicon glyphicon-info-sign input-ikon"></i><span class="span-input">Senha</span></label>
+                                <label><i class="material-icons glyphicon glyphicon-lock"></i><span class="span-input">Senha</span></label>
                             </div>
                             <div class="wrapper">
                                 <span class="group-btn">     

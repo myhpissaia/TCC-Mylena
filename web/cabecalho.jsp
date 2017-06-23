@@ -1,4 +1,4 @@
-<title>Donate Solidarity</title>
+<title>Doe Solidariedade</title>
 <link rel="icon" href="imagens/foto1.png">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

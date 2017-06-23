@@ -13,7 +13,7 @@
                 <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="glyphicon glyphicon-home fa fa-times">
                 </i></a>
                 <li class="sidebar-brand">
-                    <a href="index.jsp">Donate Solidarity</a>
+                    <a href="index.jsp">Doe Solidariedade</a>
                 </li>
                 <li>
                     <a href="login.jsp">Login</a>
@@ -21,14 +21,17 @@
                 <li>
                     <a href="cadastro.jsp">Cadastro</a>
                 </li>
+                 <li>
+                    <a href="sobre.jsp">Sobre</a>
+                </li>
             </ul>
         </nav>
 
         <!-- Header -->
         <header id="top" class="header">
             <div class="text-vertical-center">
-                <h1>Donate Solidarity</h1>
-                <h3>top</h3>
+                <h1>Doe Solidariedade</h1>
+                <h3>Unidos para o bem</h3>
                 <br>
             </div>
         </header>
