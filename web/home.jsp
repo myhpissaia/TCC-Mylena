@@ -10,7 +10,7 @@
         <!-- Principal -->
         <header id="top" class="header">
             <div class="text-vertical-center">
-                <h1>Doe Solidariedade</h1>
+                <h1>Seja bem-vindo!</h1>
                 <h3>Unidos para o bem</h3>
             </div>
         </header>

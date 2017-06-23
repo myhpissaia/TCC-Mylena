@@ -2,6 +2,7 @@
 <html>
     <head>
         <%@include file="/cabecalho.jsp" %>
+        <link href="css/lista-ongs.css" rel="stylesheet">
     </head>
     <body>
         <!-- Menu -->

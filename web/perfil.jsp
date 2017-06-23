@@ -14,7 +14,7 @@
         <!-- Principal -->
         <header id="top" class="header">
             <!-- Nosso Cadastro -->
-            <div class="container fundo1">
+            <div class="container fundo1" style="margin-top: 50px;">
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-8 fundo2">
