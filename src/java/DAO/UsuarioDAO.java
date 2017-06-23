@@ -15,11 +15,11 @@ import java.util.logging.Logger;
  *
  * @author  <Leticia e Mylena>
  */
-public class PessoaDAO {
+public class UsuarioDAO {
 
     private Connection conexao;
 
-    public PessoaDAO() {
+    public UsuarioDAO() {
         this.conexao = new ConnectionFactory().getConnection();
     }
 
@@ -40,11 +40,11 @@ public class PessoaDAO {
 
         } catch (SQLException ex) {
             System.out.println("ta foda");
-            Logger.getLogger(PessoaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public boolean updateUser(Usuario i) {
+    public boolean atualizaUsuario(Usuario i) {
         String sql = "UPDATE cadastro SET nome=?, sobrenome=?, email=?, login=?,senha=?, consenha=? WHERE id_user =?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -64,7 +64,7 @@ public class PessoaDAO {
         }
     }
 
-    public boolean deleteUser(Usuario d) {
+    public boolean deletaUsuario(Usuario d) {
         String sql = "DELETE FROM cadastro WHERE id_user=?";
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -74,7 +74,7 @@ public class PessoaDAO {
             conexao.close();
             return true;
         } catch (SQLException ex) {
-            Logger.getLogger(PessoaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
             return false;
         }
     }
@@ -99,7 +99,7 @@ public class PessoaDAO {
             rs.close();
             stmt.close();
         } catch (SQLException ex) {
-            Logger.getLogger(PessoaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return cad;
     }

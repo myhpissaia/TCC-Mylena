@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>Login</servlet-name>
-        <servlet-class>Servlet.Servlet_Login</servlet-class>
+        <servlet-name>ServletLogin</servlet-name>
+        <servlet-class>Servlet.ServletLogin</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Servlet_Cadastro</servlet-name>
-        <servlet-class>Servlet.Servlet_Cadastro</servlet-class>
+        <servlet-name>ServletCadastro</servlet-name>
+        <servlet-class>Servlet.ServletCadastro</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Servlet_Doacao</servlet-name>
-        <servlet-class>Servlet.Servlet_Doacao</servlet-class>
+        <servlet-name>ServletDoacao</servlet-name>
+        <servlet-class>Servlet.ServletDoacao</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Login</servlet-name>
-        <url-pattern>/Login</url-pattern>
+        <servlet-name>ServletLogin</servlet-name>
+        <url-pattern>/ServletLogin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Servlet_Cadastro</servlet-name>
-        <url-pattern>/Servlet_Cadastro</url-pattern>
+        <servlet-name>ServletCadastro</servlet-name>
+        <url-pattern>/ServletCadastro</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>Servlet_Doacao</servlet-name>
-        <url-pattern>/Servlet_Doacao</url-pattern>
+        <servlet-name>ServletDoacao</servlet-name>
+        <url-pattern>/ServletDoacao</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

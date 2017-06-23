@@ -5,10 +5,11 @@
  */
 package Servlet;
 
-import DAO.PessoaDAO;
-import Model.Usuario;
+import DAO.DoaDAO;
+import Model.Doacao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,9 +18,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author  <Leticia e Mylena>
+ * @author Aluno
  */
-public class Servlet_Cadastro extends HttpServlet {
+public class ServletDoacao extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,50 +34,35 @@ public class Servlet_Cadastro extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
         try {
-            System.out.println("aqui");
-            String nome = (String) request.getParameter("nome");
-            String sobrenome = (String) request.getParameter("sobrenome");
-            String email = (String) request.getParameter("email");
-            String login = (String) request.getParameter("login");
-            String senha = (String) request.getParameter("senha");
-            String consenha = (String) request.getParameter("consenha");
+            String nome = (String) request.getParameter("nome_ong");
+            String doacao = (String) request.getParameter("doacao");
+            Date dt = Date.valueOf(request.getParameter("data"));
 
-            if (senha.equals(consenha)) {
+            Doacao doa = new Doacao();
 
-                Usuario user = new Usuario();
+            doa.setNome(nome);
+            doa.setDoacao(doacao);
+            doa.setData(dt);
 
-                user.setNome(nome);
-                user.setSobrenome(sobrenome);
-                user.setEmail(email);
-                user.setLogin(login);
-                user.setSenha(senha);
-                user.setConsenha(consenha);
-
-                PessoaDAO dao = new PessoaDAO();
-                try {
-                    dao.insereUsuario(user);
-                } catch (Exception ex) {
-                    System.out.println("Erro:" + ex);
-                }
-                
-                request.setAttribute("mensagem", "Usuário cadastrado com sucesso!");
-                request.setAttribute("css_class", "sucesso");
-
-                RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-                rd.forward(request, response);
-
-            } else {
-
-                request.setAttribute("mensagem", "Erro ao cadastrar usuário!");
-                request.setAttribute("css_class", "erro");
-
-                RequestDispatcher rd = request.getRequestDispatcher("cadastro.jsp");
-                rd.forward(request, response);
+            DoaDAO dao = new DoaDAO();
+            try {
+                dao.insereDoacao(doa);
+            } catch (Exception ex) {
+                System.out.println("Erro11: " + ex);
             }
+
+            request.setAttribute("mensagem", "Doação realiza com sucesso!");
+            request.setAttribute("css_class", "sucesso");
+
+            RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+            rd.forward(request, response);
+
         } catch (Exception ex) {
             System.out.println("Erro:" + ex);
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -117,4 +103,5 @@ public class Servlet_Cadastro extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
 }

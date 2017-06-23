@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlet;
 
-import DAO.DoaDAO;
-import Model.Doacao;
+import Model.Usuario;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,51 +10,51 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Aluno
+ * @author  <Leticia e Mylena>
  */
-public class Servlet_Doacao extends HttpServlet {
+public class ServletCadastro extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        String nome = request.getParameter("nome");
+        String sobrenome = request.getParameter("sobrenome");
+        String email = request.getParameter("email");
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        String confirmarSenha = request.getParameter("consenha");
+
         try {
-            String nome = (String) request.getParameter("nome_ong");
-            String doacao = (String) request.getParameter("doacao");
-            Date dt = Date.valueOf(request.getParameter("data"));
+            if (senha.equals(confirmarSenha)) {
 
-            Doacao doa = new Doacao();
+                Usuario usuario = new Usuario();
+                usuario.setNome(nome);
+                usuario.setSobrenome(sobrenome);
+                usuario.setEmail(email);
+                usuario.setLogin(login);
+                usuario.setSenha(senha);
+                usuario.setConsenha(confirmarSenha);
 
-            doa.setNome(nome);
-            doa.setDoacao(doacao);
-            doa.setData(dt);
+                /*PessoaDAO dao = new PessoaDAO();
+                try {
+                    dao.insereUsuario(user);
+                } catch (Exception ex) {
+                    System.out.println("Erro:" + ex);
+                }*/
 
-            DoaDAO dao = new DoaDAO();
-            try {
-                dao.insereDoacao(doa);
-            } catch (Exception ex) {
-                System.out.println("Erro11: " + ex);
+                RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+                rd.forward(request, response);
+
+            } else {
+
+                RequestDispatcher rd = request.getRequestDispatcher("cadastro.jsp");
+                rd.forward(request, response);
+                
             }
-
-            request.setAttribute("mensagem", "Doação realiza com sucesso!");
-            request.setAttribute("css_class", "sucesso");
-
-            RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
-            rd.forward(request, response);
-
         } catch (Exception ex) {
             System.out.println("Erro:" + ex);
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -103,5 +95,4 @@ public class Servlet_Doacao extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

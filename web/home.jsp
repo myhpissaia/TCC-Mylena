@@ -1,15 +1,21 @@
-<%-- 
-    Document   : home
-    Created on : 28/06/2017, 15:06:43
-    Author     : Aluno
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <%@include file="/cabecalho.jsp" %>
     </head>
-
+    <body>
+        <!-- Menu -->
+        <%@include file="/menu-sistema.jsp" %>
+        
+        <!-- Principal -->
+        <header id="top" class="header">
+            <div class="text-vertical-center">
+                <h1>Doe Solidariedade</h1>
+                <h3>Unidos para o bem</h3>
+            </div>
+        </header>
+        
+        <!-- Menu(JavaScript) -->
+        <script src="js/menu.js"></script>
+    </body>
 </html>

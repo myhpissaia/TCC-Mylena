@@ -1,6 +1,6 @@
 package Servlet;
 
-import DAO.PessoaDAO;
+import DAO.UsuarioDAO;
 import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author  <Leticia e Mylena>
  */
-public class Servlet_Login extends HttpServlet {
+public class ServletLogin extends HttpServlet {
 
     public static String login_user;
 
@@ -26,33 +26,28 @@ public class Servlet_Login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String login = (String) request.getParameter("login");
-        String senha = (String) request.getParameter("senha");
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
 
-        PessoaDAO cad = new PessoaDAO();
-        ObservableList<Usuario> user = (ObservableList<Usuario>) cad.getUsuario();
+        /*UsuarioDAO cad = new UsuarioDAO();
+        ObservableList<Usuario> user = (ObservableList<Usuario>) cad.getUsuario();*/
 
-        for (Usuario pes : user) {
+        /*for (Usuario pes : user) {
 
             if ((login.equals(pes.getLogin())) && senha.equals(pes.getSenha())) {
 
                 login_user = pes.getLogin();
                 
-
-                request.setAttribute("message", "Login realizado com sucesso!");
-                request.setAttribute("css_class", "sucesso");
-
+        */
                 RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
                 rd.forward(request, response);
 
-                break;
+        /*        break;
             }
-        }
-        request.setAttribute("message", "Erro ao realizar o login!");
-        request.setAttribute("css_class", "erro");
+        }*/
 
-        RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-        rd.forward(request, response);
+        //RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+        //rd.forward(request, response);
 
     }
 

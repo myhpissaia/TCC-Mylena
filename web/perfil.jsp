@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
     <head>
         <%@include file="/cabecalho.jsp" %>
@@ -17,10 +16,11 @@
             <!-- Nosso Cadastro -->
             <div class="container fundo1">
                 <div class="row">
-                    <div class="col-md-12 fundo2">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 fundo2">
                         <div class="form-login" style="margin: 20px;">
-                            <form action="ServletCadastro" method="POST">
-                                <div class="col-md-6">
+                            <form>
+                                <div class="col-md-12">
                                     <!-- Campos -->
                                     <div class="group">
                                         <input requered name="nome" type="text" required>
@@ -45,41 +45,29 @@
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
                                         <label>
-                                            <i class="material-icons glyphicon glyphicon-home"></i>
-                                            <span class="span-input">ONG</span>
+                                            <i class="material-icons glyphicon glyphicon-envelope"></i>
+                                            <span class="span-input">E-mail</span>
                                         </label>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="checkbox">
+                                    <div class="group">
+                                        <input requered name="login" type="text" required>
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
                                         <label>
-                                            <input type="checkbox" style="width:3vw; height:3vh;"> <span class="bar" style="font-size: 20px; padding-left: 20px;">Alimento</span>
+                                            <i class="material-icons glyphicon glyphicon-user input-ikon"></i>
+                                            <span class="span-input">Login</span>
                                         </label>
                                     </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" style="width:3vw; height:3vh;"> <span class="bar" style="font-size: 20px; padding-left: 20px;">Roupa</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" style="width:3vw; height:3vh;"> <span class="bar" style="font-size: 20px; padding-left: 20px;">Brinquedo</span>
-                                        </label>
-                                    </div>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" style="width:3vw; height:3vh;"> <span class="bar" style="font-size: 20px; padding-left: 20px;">Higiene</span>
-                                        </label>
-                                    </div>
-                                    <div class="wrapper" style="margin-top: 40px;">
+                                    <div class="wrapper">
                                         <span class="group-btn">     
-                                            <button type="submit" class="btn btn-primary btn-md">Doar<i  class="fa fa-sign-in"></i></button>
+                                            <button type="submit" class="btn btn-primary btn-md">Atualizar Perfil<i  class="fa fa-sign-in"></i></button>
                                         </span>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    <div class="col-md-2"></div>
                 </div>
             </div>
         </header>
