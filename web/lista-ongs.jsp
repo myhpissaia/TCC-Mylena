@@ -6,21 +6,28 @@
     <div class="row">
         <form action="ServletPesquisa" method="GET">
             <div class="col-md-12">
-                <div class="col-md-10">
+                <div class="col-md-8">
                     <div class="group">
                         <input requered name="pesquisa" type="text" required>
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>
                             <i class="material-icons glyphicon glyphicon-user input-ikon"></i>
-                            <span class="span-input">Pesquisar</span>
+                            <span class="span-input">Digite sua pesquisa</span>
                         </label>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="wrapper">
-                        <span class="group-btn">     
-                            <button type="submit" class="btn btn-primary btn-md">Pesquisar<i  class="fa fa-sign-in"></i></button>
+                        <span class="group-btn">  
+                            <button type="submit" class="btn btn-primary btn-md">Pesquisar<i class="fa fa-sign-in"></i></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="wrapper">
+                        <span class="group-btn">  
+                            <button type="submit" class="btn btn-primary btn-md">Gerar PDF<i class="fa fa-sign-in"></i></button>
                         </span>
                     </div>
                 </div>

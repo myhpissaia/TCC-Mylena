@@ -1,6 +1,7 @@
 package Servlet;
 
 import DAO.UsuarioDAO;
+import Model.Criptografia;
 import Model.Usuario;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -33,36 +34,65 @@ public class ServletCadastro extends HttpServlet {
 
         try {
             if (senha.equals(confirmarSenha)) {
+                senha = Criptografia.criptografar(senha);
+                confirmarSenha = Criptografia.criptografar(confirmarSenha);
 
                 if (email.contains("@")) {
 
                     UsuarioDAO dao1 = new UsuarioDAO();
-                    for (Usuario usuario1 : dao1.getUsuario()) {
 
-                        if (!usuario1.getEmail().equals(email)) {
+                    if (dao1.getUsuario().size() > 0) {
 
-                            Usuario usuario = new Usuario();
-                            usuario.setNome(nome);
-                            usuario.setSobrenome(sobrenome);
-                            usuario.setEmail(email);
-                            usuario.setLogin(login);
-                            usuario.setSenha(senha);
-                            usuario.setConsenha(confirmarSenha);
+                        for (Usuario usuario1 : dao1.getUsuario()) {
 
-                            UsuarioDAO dao = new UsuarioDAO();
-                            try {
-                                dao.insereUsuario(usuario);
-                            } catch (Exception ex) {
-                                System.out.println("Erro:" + ex);
+                            if (!usuario1.getEmail().equals(email)) {
+
+                                Usuario usuario = new Usuario();
+                                usuario.setNome(nome);
+                                usuario.setSobrenome(sobrenome);
+                                usuario.setEmail(email);
+                                usuario.setLogin(login);
+                                usuario.setSenha(senha);
+                                usuario.setConsenha(confirmarSenha);
+
+                                UsuarioDAO dao = new UsuarioDAO();
+                                try {
+                                    dao.insereUsuario(usuario);
+                                } catch (Exception ex) {
+                                    System.out.println("Erro:" + ex);
+                                }
+
+                                cssEmail = "";
+                                cssSenha = "";
+
+                                pagina = "login.jsp";
+
+                                break;
                             }
 
-                            cssEmail = "";
-                            cssSenha = "";
-
-                            pagina = "login.jsp";
-
-                            break;
                         }
+
+                    } else {
+
+                        Usuario usuario = new Usuario();
+                        usuario.setNome(nome);
+                        usuario.setSobrenome(sobrenome);
+                        usuario.setEmail(email);
+                        usuario.setLogin(login);
+                        usuario.setSenha(senha);
+                        usuario.setConsenha(confirmarSenha);
+
+                        UsuarioDAO dao = new UsuarioDAO();
+                        try {
+                            dao.insereUsuario(usuario);
+                        } catch (Exception ex) {
+                            System.out.println("Erro:" + ex);
+                        }
+
+                        cssEmail = "";
+                        cssSenha = "";
+
+                        pagina = "login.jsp";
 
                     }
 

@@ -1,3 +1,4 @@
+<%@page import="Servlet.ServletPesquisa"%>
 <%@page import="java.util.List"%>
 <%@page import="Model.Ong"%>
 <%@page import="DAO.OngDAO"%>
@@ -14,14 +15,14 @@
                         <span class="bar"></span>
                         <label>
                             <i class="material-icons glyphicon glyphicon-user input-ikon"></i>
-                            <span class="span-input">Pesquisar</span>
+                            <span class="span-input">Digite sua pesquisa</span>
                         </label>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="wrapper">
                         <span class="group-btn">     
-                            <button type="submit" class="btn btn-primary btn-md">Pesquisar<i  class="fa fa-sign-in"></i></button>
+                            <button type="submit" class="btn btn-primary btn-md">Pesquisar<i class="fa fa-sign-in"></i></button>
                         </span>
                     </div>
                 </div>
@@ -31,7 +32,7 @@
 
     <div class="row">
         <%
-            List<Ong> ongs = (List) request.getAttribute("ongs");
+            List<Ong> ongs = ServletPesquisa.ongs;
             for (Ong ong : ongs) {
         %>
         <div class="col-md-12">

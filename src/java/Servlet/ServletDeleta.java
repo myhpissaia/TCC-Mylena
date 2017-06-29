@@ -1,42 +1,45 @@
 package Servlet;
 
-import DAO.OngDAO;
-import Model.Ong;
+import DAO.UsuarioDAO;
+import Model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author User
+ * @author Aluno
  */
-public class ServletPesquisa extends HttpServlet {
+public class ServletDeleta extends HttpServlet {
 
-    public static List<Ong> ongs = new ArrayList();
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        ongs.clear();
         
-        String pesquisa = request.getParameter("pesquisa");
-
-        OngDAO dao = new OngDAO();
-
-        for (Ong ong : dao.getOng()) {
-            if (ong.getNome().contains(pesquisa)) {
-                ongs.add(ong);
-            }
-        }
-
-        response.sendRedirect("ongs-pesquisa.jsp");
-
+        HttpSession session = request.getSession();
+        Usuario usuario = (Usuario) session.getAttribute("usuario");
+        
+        UsuarioDAO dao = new UsuarioDAO();
+        dao.deletaUsuario(usuario);
+        
+        session.invalidate();
+        
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+        rd.forward(request, response);
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

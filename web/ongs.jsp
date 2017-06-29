@@ -3,6 +3,9 @@
     <head>
         <%@include file="/cabecalho.jsp" %>
         <link href="css/lista-ongs.css" rel="stylesheet">
+        <!-- Form(CSS e JavaScript) -->
+        <link rel="stylesheet" href="css/form.css" type="text/css">
+        <script src="js/form.js"></script>
     </head>
     <body>
         <!-- Menu -->

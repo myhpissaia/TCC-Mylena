@@ -64,7 +64,7 @@
                                         </span>
                                         
                                         <span class="group-btn">     
-                                            <button type="submit" class="btn btn-primary btn-md">Deletar Perfil<i  class="fa fa-sign-in"></i></button>
+                                            <a href="ServletDeleta" class="btn btn-primary btn-md">Deletar Perfil<i  class="fa fa-sign-in"></i></a>
                                         </span>
                                     </div>
                                 </div>

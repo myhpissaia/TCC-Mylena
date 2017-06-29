@@ -1,12 +1,7 @@
 package Servlet;
 
-import DAO.OngDAO;
-import Model.Ong;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,29 +9,22 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author User
+ * @author Aluno
  */
-public class ServletPesquisa extends HttpServlet {
+public class ServletPDF extends HttpServlet {
 
-    public static List<Ong> ongs = new ArrayList();
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        ongs.clear();
-        
-        String pesquisa = request.getParameter("pesquisa");
-
-        OngDAO dao = new OngDAO();
-
-        for (Ong ong : dao.getOng()) {
-            if (ong.getNome().contains(pesquisa)) {
-                ongs.add(ong);
-            }
-        }
-
-        response.sendRedirect("ongs-pesquisa.jsp");
-
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

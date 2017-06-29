@@ -24,6 +24,14 @@
         <servlet-name>ServletPesquisa</servlet-name>
         <servlet-class>Servlet.ServletPesquisa</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletDeleta</servlet-name>
+        <servlet-class>Servlet.ServletDeleta</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletPDF</servlet-name>
+        <servlet-class>Servlet.ServletPDF</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletLogin</servlet-name>
         <url-pattern>/ServletLogin</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>ServletPesquisa</servlet-name>
         <url-pattern>/ServletPesquisa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDeleta</servlet-name>
+        <url-pattern>/ServletDeleta</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletPDF</servlet-name>
+        <url-pattern>/ServletPDF</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
